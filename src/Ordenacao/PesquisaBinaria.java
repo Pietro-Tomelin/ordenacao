@@ -5,24 +5,24 @@ package Ordenacao;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-public class PesquisaBinaria extends ImportaArquivo {
+public class PesquisaBinaria {
 
-	public int binaria(ArrayList<Long> listaEscrita, long x) {
+	public int binaria(ArrayList<Long> listaInt, long x) {
 		int meio;
 		int inicio, fim;
 		inicio = 0;
-		fim = listaEscrita.size() - 1;
+		fim = listaInt.size() - 1;
 
 		while (inicio <= fim) {
 
 			meio = (inicio + fim) / 2;
 
-			if (listaEscrita.get(meio) == x) {
+			if (listaInt.get(meio) == x) {
 				return meio;
-			} else if (listaEscrita.get(meio) < x) {
+			} else if (listaInt.get(meio) < x) {
 				inicio = meio + 1;
 
-			} else if (listaEscrita.get(meio) > x) {
+			} else if (listaInt.get(meio) > x) {
 				fim = meio - 1;
 			}
 		}
@@ -30,9 +30,9 @@ public class PesquisaBinaria extends ImportaArquivo {
 		return 0;
 	}
 
-	public void retorno(ArrayList<Long> listaEscrita, long x) {
+	public void retorno(ArrayList<Long> listaInt, long x) {
 
-		long indice = binaria(listaEscrita, x);
+		long indice = binaria(listaInt, x);
 		
 		if(indice == 0){
 			JOptionPane.showMessageDialog(null, "Valor não encontrado!");

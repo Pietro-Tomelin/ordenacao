@@ -2,34 +2,36 @@
 package Ordenacao;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
-public class BuscaLinear extends ImportaArquivo{
-	public int linear(ArrayList<Long> listaEscrita, long x) {
+public class BuscaLinear{
+	public int linear(ArrayList<Long> listaInt, long x) {
 		
-		boolean bolFound = false;
-		int indFound = 0;
-		long aux = 0;
+		int i=0;
+		int indice = 0;
 		
-		for (int i = 0; i <= listaEscrita.size(); i++) {
-			if (listaEscrita.get(i) == x) {
-				bolFound = true;
-				indFound = i;
-				aux = listaEscrita.get(i);
+		while(i<listaInt.size()){
+			i++;
+			if(listaInt.get(i-1) != x){
+				indice=i;
+			}
+			else {
+				
+				break;
 			}
 		}
-
-		if (bolFound == true) {
-			JOptionPane.showMessageDialog(null, "O valor de número "+aux+" foi encontrado no índice " + (indFound + 1));
-		} else {
-			System.out.println("Valor não encontrado!");
-		}
-		return indFound;
+		return indice;
 	}
 	
-	public void retornoLinear(ArrayList<Long> listaEscrita, long busca){
-		int i = linear(listaEscrita, busca);
+	public void retornoLinear(ArrayList<Long> listaInt, long busca){
+		int i = linear(listaInt, busca);
+		
+		if(i == listaInt.size()){
+			JOptionPane.showMessageDialog(null, "Valor não encontrado!");
+		}
+		else{
+			JOptionPane.showMessageDialog(null, "O elemento "+busca+" foi encontrado na "+(i+1)+"ª linha do arquivo.");
+		}
 	}
 }

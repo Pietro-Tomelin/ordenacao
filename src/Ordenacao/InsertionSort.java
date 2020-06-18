@@ -1,9 +1,7 @@
 //método de ordenação insertion sort
 package Ordenacao;
 
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 
 public class InsertionSort {
@@ -21,10 +19,9 @@ public class InsertionSort {
 	    } 
 	} 
 	
-	public static void printArray(ArrayList<Long> listaInt, PrintWriter writer) { 
+	public static void printArray(ArrayList<Long> listaInt) { 
 	    for (int i = 0; i < listaInt.size(); i++){ 
 	        System.out.println(listaInt.get(i)); 
-	    	writer.println(i);
 	    	}
 	} 
 }
